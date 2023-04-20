@@ -1,0 +1,22 @@
+.form{
+    height: 50%;
+    min-width: 50%;
+    border-color: blue;
+    background: #547ac05b;
+    display: inline-block;
+    float: left;
+
+}
+
+.topology{
+    height: 50%;
+    min-width: 40%;
+    border-color: red;
+    display: inline-block;
+    float: right;
+}
+
+.form_label{
+    min-width: 100px;
+    display: inline-block;
+}

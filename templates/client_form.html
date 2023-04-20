@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Client</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/client_form.css') }}">
+</head>
+<body>
+    <span class="form"> 
+        <form action="{{url_for('client_form')}}" method="post">
+            <h1> Generate Random Graph </h1> <hr>
+            <table>
+                <tr><td><label class="form_label" for="nodes"> Number of Nodes</label></td> 
+                    <td><input type="number" id="nodes" name="nodes"></td></tr>
+
+                <tr><td><label class="form_label" for="connected"> Ensure Connected </label></td> 
+                    <td><input type="checkbox" id="connected" name="connected"></td> </tr>
+
+                <tr><td><label class="form_label" for="source"> Source Node </label></td> 
+                    <td><input type="text" id="source" name="source"> </td></tr>
+
+                <tr><td><label class="form_label" for="destination"> Destination Node </label></td> 
+                    <td><input type="text" id="destination" name="destination"> </td></tr>
+
+                <tr><td><label class="form_label" for="routing_logic"> Routing Logic </label></td>
+                    <td><select id="routing_logic" name="routing_logic">
+                        <option value="all_simple_paths" selected> all_simple_paths </option>
+                        <option value="all_cheapest_paths" selected> all_cheapest_paths </option>
+                        <option value="sortest_path_spf" selected> sortest_path_spf </option>
+                        <option value="sortest_path_bf" selected> sortest_path_bf </option>
+                    </select></td>
+            </table>
+            <hr>
+            <table>
+                <tr>
+                    <td><label for="server_ip">Route Server IP</label></td>
+                    <td><input type="text" id="server_ip" name="server_ip"></td> 
+                </tr>
+                <tr>
+                    <td><label for="server_port">Port Number</label></td>
+                    <td><input type="number" id="server_port" name="server_port"></td> 
+                </tr>
+            </table>
+            <hr>
+            <button type="submit">Submit</button>
+        </form>
+    </span>  
+    <span class="topology"> 
+        <h2> Topology</h2> <hr>
+        <img src="{{url_for('static',filename='topo.png')}}" alt="No topology">
+    </span>
+    
+</body>
+</html>
